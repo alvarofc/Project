@@ -6,15 +6,34 @@ IronHack BCN, Data Analytics FEB19
 ### Overview
 Include the following points in your overview:
 
-* What data/business/research/personal question you would like to answer?
-Make sure the question description is human-friendly because you will have non-tech audience to see your final project presentation.
-* Did you understand the context for the question and the scientific or business application?
-* What is the hypothesis you would like to test in order to answer your question?
-Frame your hypothesis with statistical/data languages (i.e. define Null and Alternative Hypothesis). You can use formulas if you want but that is not required.
-* Did you consider whether the question could be answered with the available data?
-* How will you test your hypothesis?
-* How will you test your success?
+> Questions that Stalker answers:
+- How is the market that the company is in evolving through the last years?
+- What is the sentiment about the company and founders in twitter and recent news?
+- What information about the company and founder can I gather from tech database? (Crunchbase and others)
+- Is there something worrying about the company or founder on the internet?
 
+> Relevance of the project 
+
+This tool eases the process of due dilligence for tech investors cutting the time it takes to validate a project and team and thus reducing the time needed to close a deal.  
+
+> Null Hypothesis: 
+
+ - The market the startup is in is growing.
+ - The founder and company have good reputation.
+
+
+> Data considerations
+ 
+ - I started by asking myself what data I would like to have and asking some Angel Investors what data they would like to have. After that, I tried to find the resources that gave me that data. 
+
+> How the hypothesis is tested:
+
+ - Analizing data about the amount of money invested in the sector and the number of deals done in the recent years and predicting future movements.
+ - Trying to find information about the founders on the internet and social media.
+
+> How the success is tested: 
+ - The tool is correctly doing it's work if it is able to find meaningful information.
+ 
 
 
 
