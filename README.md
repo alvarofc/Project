@@ -4,7 +4,6 @@
 IronHack BCN, Data Analytics FEB19
 
 ### Overview
-Include the following points in your overview:
 
 > Questions that Stalker answers:
 - How is the market that the company is in evolving through the last years?
