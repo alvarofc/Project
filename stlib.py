@@ -282,4 +282,52 @@ def founders(founder, people):
     tw_analysis_founder(public_tweets, founder)
     # Google search
     most_warnings(find_webs(founder))
+    
+
+# Look for data about company
+def find_companies_by_size(size, companies, name, sector, company):
+    company_nan = companies.dropna()
+    company_sector = company_nan[company_nan['category_list'].str.contains(sector)].drop('index',axis=1).dropna()
+    company_sector['total_funding_size']=pd.qcut(company_sector.funding_total_usd, q=[0, .25, .75, 1], labels=['small', 'medium', 'big'])
+    if name in company_nan['name']:
+        return company_sector[(company_sector['total_funding_size']==size)& (company_sector['funding_total_usd'] > 100000) & (company_sector['status'] != 'closed')& (company_sector['country_code']==company.country_code)].sample()
+    else:     
+        return company_sector[(company_sector['total_funding_size']==size)& (company_sector['funding_total_usd'] > 100000) & (company_sector['status'] != 'closed')].sample()
  
+
+#
+def competitor_info(company):
+    print(f"Company name: {company.name.item()}")
+    print(f"Total money raised: ${format(company.funding_total_usd.item(),',.2f')}")
+    print(f"Total rounds: {company.funding_rounds.item()}")
+    print(f"Webpage: {company.homepage_url.item()}")
+    print(f"Country: {company.country_code.item()}")
+    print(f"Status: {company.status.item()}")
+    print(f"Founded in: {company.founded_at.item()}")
+        
+
+def startup(name, companies, sector):
+    company = companies[companies['name'] == name]
+    
+    try:
+        print(f"Company name: {company.name.item()}")
+        print(f"Total money raised: ${format(company.funding_total_usd.item(),',.2f')}")
+        print(f"Total rounds: {company.funding_rounds.item()}")
+        print(f"Status: {company.status.item()}")
+   
+    # Find competitors
+        print('\n')
+        print(f"Competitors similar to {company.name.item()}:")
+        print('\n')
+        competitor_info(find_companies_by_size('small', companies, name, sector, company))
+        print('\n')      
+        competitor_info(find_companies_by_size('medium', companies, name, sector, company))
+        print('\n')     
+        competitor_info(find_companies_by_size('big', companies, name, sector, company))
+    except: 
+        print(f"We couldn't find information about {name} in Crunchbase")
+    # Google search
+    try:
+        most_warnings(find_webs(name))
+    except:
+        print(f"We haven't found anything worring about {name} on Google in english. Nice!")
