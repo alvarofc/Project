@@ -34,40 +34,16 @@ How the success is tested:
  - The tool is correctly doing it's work if it is able to find meaningful information.
  
 
-
-
 ### Data Preparation
 Overview:
-* What is your dataset about?
-* Where/how did you obtain your dataset?
-It can be either a public dataset or collected with API/web scraping.
-Provide a link if possible.
-* General description of the dataset such as the size, complexity, data types, etc.
+The runchbase dataset conatains information about thousands of companies, entrepreneurs and investments. It was obtained from a github repo who scraped the data. Also I obtained information from Google, NewsAPI and Twitter.
 
-### Data Ingestion & Database
-* If you downloaded a dataset (either public or private), describe where you downloaded it and include the command to load the dataset.
-* If you obtain the data via API/web scraping, provide the scripts.
-* Provide a schema of your tables.
-
-### Data Wrangling and Cleaning
-Your full process of data wrangling and cleaning.
-* Document your workflow and thinking process.
-
-### Data Analysis
-* Overview the general steps you will go through to analyze your data in order to test your hypothesis.
-* Document each step of your data exploration and analysis.
-* Print charts to demonstrate the effect of your work. Charts make your presentation look good too.
-* If you use ML in your final project, also describe your feature selection process.
-
-### Model Training and Evaluation
-* Train your ML model, produce results, and evaluate.
-* This is an iterative process. Try your best to improve your model performance by:
-  * Try different models and select one that is the simplest yet produce the best result.
-  * Try advanced techniques and see if they improve the result.
 
 ### Conclusion
-* Summarize your data analysis result.
-* State your conclusion of your hypothesis testing.
-* Interpret your findings in terms of the human-understandable question you try to answer.
+- Stalker  manages to gather and display meaningful information about the founder, the company and the market that could help to take a decision about investing or not.
 
 ### What are the next steps?
+- Create dashboard to show information.
+- More data sources.
+- Predict if a company is going to get funded.
+- Show positive result on Google.
